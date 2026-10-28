@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 注意：数据库名字记得改成你自己的，且这个数据库必须是空的！
+    url: jdbc:mysql://127.0.0.1:3306/miaosha?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  flyway:
+    enabled: true
+    # 当数据库不是空的时候，是否自动执行基准迁移（第一次建议设 true 或直接清空数据库）
+    baseline-on-migrate: true
+    # 脚本存放位置（默认就是这个，写上心里踏实）
+    locations: classpath:db/migration
